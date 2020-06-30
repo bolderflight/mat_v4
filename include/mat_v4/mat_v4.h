@@ -8,12 +8,11 @@
 #ifndef INCLUDE_MAT_V4_MAT_V4_H_
 #define INCLUDE_MAT_V4_MAT_V4_H_
 
-#include <iostream>
+#include <stdio.h>
 #include <cstdint>
 #include <string>
 #include <array>
 #include <vector>
-#include <stdio.h>
 #include "Eigen/Core"
 #include "Eigen/Dense"
 
@@ -434,6 +433,6 @@ void Write(std::string name, const std::vector<uint8_t> &ref, FILE* file) {
   fwrite(ref.data(), sizeof(uint8_t), header.mrows * header.ncols, file);
 }
 
-};
+};  // namespace mat_v4
 
 #endif  // INCLUDE_MAT_V4_MAT_V4_H_

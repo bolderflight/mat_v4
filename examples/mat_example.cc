@@ -12,20 +12,24 @@
 #include "Eigen/Dense"
 
 int main() {
-  Eigen::MatrixXd m(3, 3);
-  m(0, 0) = 1;  m(0, 1) = 4;  m(0, 2) = 7;
-  m(1, 0) = 2;  m(1, 1) = 5;  m(1, 2) = 8;
-  m(2, 0) = 3;  m(2, 1) = 6;  m(2, 2) = 9;
+  /* Output file */
   FILE *file = fopen("test.mat", "w");
+  /* Matrix */
+  Eigen::MatrixXd m(3, 3);
+  m(0, 0) = 0.1;  m(0, 1) = 0.4;  m(0, 2) = 0.7;
+  m(1, 0) = 0.2;  m(1, 1) = 0.5;  m(1, 2) = 0.8;
+  m(2, 0) = 0.3;  m(2, 1) = 0.6;  m(2, 2) = 0.9;
   mat_v4::Write("m", m, file);
+  /* Array */
   std::array<uint8_t, 6> n;
   for (std::size_t i = 0; i < 6; i++) {
     n[i] = i;
   }
   mat_v4::Write("n", n, file);
-  std::vector<double> o;
+  /* Vector */
+  std::vector<float> o;
   for (std::size_t i = 0; i < 10; i++) {
-    o.push_back(2*i);
+    o.push_back(static_cast<float>(i) / 10);
   }
   mat_v4::Write("o", o, file);
 }
