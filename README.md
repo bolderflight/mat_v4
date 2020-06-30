@@ -30,7 +30,7 @@ This library is within the namespace *mat_v4*
 
 ## Functions
 
-**void Write(std::string name, const DATA &ref, FILE *file)** This function writes data to the file given a MATLAB variable name, a reference to the data, and a pointer to the file. Data can be a matrix from the [Eigen library](http://eigen.tuxfamily.org), an array, or a vector. Static and dynamic matrices are supported and, in the case of a matrix, the matrix dimensions are used to determine the dimensions of the written data. Arrays and vectors are always written as row vectors. The data types supported are: double, float, int32_t, int16_t, uint16_t, and uint8_t.
+**void Write(std::string name, const DATA &ref, FILE &ast;file)** This function writes data to the file given a MATLAB variable name, a reference to the data, and a pointer to the file. Data can be a matrix from the [Eigen library](http://eigen.tuxfamily.org), an array, or a vector. Static and dynamic matrices are supported and, in the case of a matrix, the matrix dimensions are used to determine the dimensions of the written data. Arrays and vectors are always written as row vectors. The data types supported are: double, float, int32_t, int16_t, uint16_t, and uint8_t.
 
 ```C++
   /* Output file */
