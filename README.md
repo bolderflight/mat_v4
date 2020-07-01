@@ -5,7 +5,7 @@ This library provides a C++ interface to write data in MATLAB mat v4 binary form
    * [Contributing guide](CONTRIBUTING.md)
 
 ## Installation
-CMake is used to build this library, which is exported as a library target called *mat_v4*. The header is added as:
+CMake is used to build this library, which is exported as a library target called *mat-v4*. The header is added as:
 
 ```
 #include "mat_v4/mat_v4.h"
