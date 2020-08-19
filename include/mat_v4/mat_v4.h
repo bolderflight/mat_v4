@@ -30,10 +30,10 @@ void Write(std::string name, const Eigen::Matrix<double, M, N> &ref, FILE *file)
     uint32_t namelen;
   } header = {
     .type = 0,
-    .mrows = ref.rows(),
-    .ncols = ref.cols(),
+    .mrows = static_cast<uint32_t>(ref.rows()),
+    .ncols = static_cast<uint32_t>(ref.cols()),
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -53,10 +53,10 @@ void Write(std::string name, const std::array<double, M> &ref, FILE *file) {
     uint32_t namelen;
   } header = {
     .type = 0,
-    .mrows = M,
+    .mrows = static_cast<uint32_t>(M),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -75,10 +75,10 @@ void Write(std::string name, const std::vector<double> &ref, FILE* file) {
     uint32_t namelen;
   } header = {
     .type = 0,
-    .mrows = ref.size(),
+    .mrows = static_cast<uint32_t>(ref.size()),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -99,10 +99,10 @@ void Write(std::string name, const Eigen::Matrix<float, M, N> &ref, FILE *file) 
     uint32_t namelen;
   } header = {
     .type = 10,
-    .mrows = ref.rows(),
-    .ncols = ref.cols(),
+    .mrows = static_cast<uint32_t>(ref.rows()),
+    .ncols = static_cast<uint32_t>(ref.cols()),
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -122,10 +122,10 @@ void Write(std::string name, const std::array<float, M> &ref, FILE *file) {
     uint32_t namelen;
   } header = {
     .type = 10,
-    .mrows = M,
+    .mrows = static_cast<uint32_t>(M),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -144,10 +144,10 @@ void Write(std::string name, const std::vector<float> &ref, FILE* file) {
     uint32_t namelen;
   } header = {
     .type = 10,
-    .mrows = ref.size(),
+    .mrows = static_cast<uint32_t>(ref.size()),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -168,10 +168,10 @@ void Write(std::string name, const Eigen::Matrix<int32_t, M, N> &ref, FILE *file
     uint32_t namelen;
   } header = {
     .type = 20,
-    .mrows = ref.rows(),
-    .ncols = ref.cols(),
+    .mrows = static_cast<uint32_t>(ref.rows()),
+    .ncols = static_cast<uint32_t>(ref.cols()),
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -191,10 +191,10 @@ void Write(std::string name, const std::array<int32_t, M> &ref, FILE *file) {
     uint32_t namelen;
   } header = {
     .type = 20,
-    .mrows = M,
+    .mrows = static_cast<uint32_t>(M),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -213,10 +213,10 @@ void Write(std::string name, const std::vector<int32_t> &ref, FILE* file) {
     uint32_t namelen;
   } header = {
     .type = 20,
-    .mrows = ref.size(),
+    .mrows = static_cast<uint32_t>(ref.size()),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -237,10 +237,10 @@ void Write(std::string name, const Eigen::Matrix<int16_t, M, N> &ref, FILE *file
     uint32_t namelen;
   } header = {
     .type = 30,
-    .mrows = ref.rows(),
-    .ncols = ref.cols(),
+    .mrows = static_cast<uint32_t>(ref.rows()),
+    .ncols = static_cast<uint32_t>(ref.cols()),
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -260,10 +260,10 @@ void Write(std::string name, const std::array<int16_t, M> &ref, FILE *file) {
     uint32_t namelen;
   } header = {
     .type = 30,
-    .mrows = M,
+    .mrows = static_cast<uint32_t>(M),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -282,10 +282,10 @@ void Write(std::string name, const std::vector<int16_t> &ref, FILE* file) {
     uint32_t namelen;
   } header = {
     .type = 30,
-    .mrows = ref.size(),
+    .mrows = static_cast<uint32_t>(ref.size()),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -306,10 +306,10 @@ void Write(std::string name, const Eigen::Matrix<uint16_t, M, N> &ref, FILE *fil
     uint32_t namelen;
   } header = {
     .type = 40,
-    .mrows = ref.rows(),
-    .ncols = ref.cols(),
+    .mrows = static_cast<uint32_t>(ref.rows()),
+    .ncols = static_cast<uint32_t>(ref.cols()),
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -329,10 +329,10 @@ void Write(std::string name, const std::array<uint16_t, M> &ref, FILE *file) {
     uint32_t namelen;
   } header = {
     .type = 40,
-    .mrows = M,
+    .mrows = static_cast<uint32_t>(M),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -351,10 +351,10 @@ void Write(std::string name, const std::vector<uint16_t> &ref, FILE* file) {
     uint32_t namelen;
   } header = {
     .type = 40,
-    .mrows = ref.size(),
+    .mrows = static_cast<uint32_t>(ref.size()),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -375,10 +375,10 @@ void Write(std::string name, const Eigen::Matrix<uint8_t, M, N> &ref, FILE *file
     uint32_t namelen;
   } header = {
     .type = 50,
-    .mrows = ref.rows(),
-    .ncols = ref.cols(),
+    .mrows = static_cast<uint32_t>(ref.rows()),
+    .ncols = static_cast<uint32_t>(ref.cols()),
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -398,10 +398,10 @@ void Write(std::string name, const std::array<uint8_t, M> &ref, FILE *file) {
     uint32_t namelen;
   } header = {
     .type = 50,
-    .mrows = M,
+    .mrows = static_cast<uint32_t>(M),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
@@ -420,10 +420,10 @@ void Write(std::string name, const std::vector<uint8_t> &ref, FILE* file) {
     uint32_t namelen;
   } header = {
     .type = 50,
-    .mrows = ref.size(),
+    .mrows = static_cast<uint32_t>(ref.size()),
     .ncols = 1,
     .imagf = 0,
-    .namelen = name.length() + 1
+    .namelen = static_cast<uint32_t>(name.length() + 1)
   };
   /* Write the header */
   fwrite(&header, sizeof(header), 1, file);
