@@ -1,0 +1,9 @@
+stages:
+  - lint
+
+Lint:
+  stage: lint
+  tags:
+    - bfs
+  script: 
+    - cpplint.py --verbose=0 --filter=-whitespace,-line_length include/mat_v4/mat_v4.h
