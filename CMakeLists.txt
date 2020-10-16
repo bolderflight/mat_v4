@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 # Project information
-project(Mat-v4
-	VERSION 1.0.0
+project(Mat_v4
+	VERSION 1.0.1
 	DESCRIPTION "MATLAB binary mat file v4 C++ interface"
 	LANGUAGES CXX
 )
@@ -10,19 +10,19 @@ include(FetchContent)
 FetchContent_Declare(
 	eigen
 	GIT_REPOSITORY 	git@gitlab.com:bolderflight/software/eigen.git
-	GIT_TAG					v1.0.0
+	GIT_TAG v1.0.0
 )
 FetchContent_MakeAvailable(eigen)
 
 # Add the library target
-add_library(mat-v4 INTERFACE)
+add_library(mat_v4 INTERFACE)
 # Link libraries
-target_link_libraries(mat-v4
+target_link_libraries(mat_v4
 	INTERFACE
 		eigen
 )
 # Setup include directories 
-target_include_directories(mat-v4 INTERFACE include/)
+target_include_directories(mat_v4 INTERFACE include/)
 # Example and test if this project is built separately
 if (PROJECT_NAME STREQUAL CMAKE_PROJECT_NAME)
 	# Add the example target
@@ -35,7 +35,7 @@ if (PROJECT_NAME STREQUAL CMAKE_PROJECT_NAME)
 	# Link libraries to the example target
 	target_link_libraries(mat_example
 		PRIVATE 
-			mat-v4
+			mat_v4
 	)
 endif()
 
