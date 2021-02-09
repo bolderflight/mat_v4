@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.3
+- Updated CONTRIBUTING
+- Switched to github as source for eigen
+
 ## v1.0.2
 - Updated CONTRIBUTING
 - Switched from ssh to https for *fetch_content*

@@ -10,7 +10,6 @@ CMake is used to build this library, which is exported as a library target calle
 ```
 #include "mat_v4/mat_v4.h"
 ```
-Note that you'll need CMake version 3.13 or above; it is recommended to build and install CMake from source, directions are located in the [CMake GitLab repository](https://github.com/Kitware/CMake).
 
 The library can be also be compiled stand-alone using the CMake idiom of creating a *build* directory and then, from within that directory issuing:
 
@@ -19,7 +18,7 @@ cmake ..
 make
 ```
 
-This will build the library and an example executable called *mat_example*. The example executable source files are located at *examples/mat_example.cc*. This code is built and tested on AARCH64 and AMD64 system running Linux and an AMD64 system running the Windows Subsystem for Linux (WSL).
+This will build the library and an example executable called *mat_example*. The example executable source files are located at *examples/mat_example.cc*.
 
 ## Documentation
 Additional documentation on the MATLAB mat file format is located in the *docs* folder.
