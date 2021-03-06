@@ -25,11 +25,11 @@ Additional documentation on the MATLAB mat file format is located in the *docs* 
 
 ## Namespace
 
-This library is within the namespace *mat_v4*
+This library is within the namespace *bfs*
 
 ## Functions
 
-**void Write(std::string name, const DATA &ref, FILE &ast;file)** This function writes data to the file given a MATLAB variable name, a reference to the data, and a pointer to the file. Data can be a matrix from the [Eigen library](http://eigen.tuxfamily.org), an array, or a vector. Static and dynamic matrices are supported and, in the case of a matrix, the matrix dimensions are used to determine the dimensions of the written data. Arrays and vectors are always written as row vectors. The data types supported are: double, float, int32_t, int16_t, uint16_t, and uint8_t.
+**void MatWrite(std::string name, const DATA &ref, FILE &ast;file)** This function writes data to the file given a MATLAB variable name, a reference to the data, and a pointer to the file. Data can be a matrix from the [Eigen library](http://eigen.tuxfamily.org), an array, or a vector. Static and dynamic matrices are supported and, in the case of a matrix, the matrix dimensions are used to determine the dimensions of the written data. Arrays and vectors are always written as row vectors. The data types supported are: double, float, int32_t, int16_t, uint16_t, and uint8_t.
 
 ```C++
   /* Output file */
@@ -39,17 +39,17 @@ This library is within the namespace *mat_v4*
   m(0, 0) = 0.1;  m(0, 1) = 0.4;  m(0, 2) = 0.7;
   m(1, 0) = 0.2;  m(1, 1) = 0.5;  m(1, 2) = 0.8;
   m(2, 0) = 0.3;  m(2, 1) = 0.6;  m(2, 2) = 0.9;
-  mat_v4::Write("m", m, file);
+  bfs::MatWrite("m", m, file);
   /* An array of uint8_t */
   std::array<uint8_t, 6> n;
   for (std::size_t i = 0; i < 6; i++) {
     n[i] = i;
   }
-  mat_v4::Write("n", n, file);
+  bfs::MatWrite("n", n, file);
   /* A vector of floats */
   std::vector<float> o;
   for (std::size_t i = 0; i < 10; i++) {
     o.push_back(static_cast<float>(i) / 10);
   }
-  mat_v4::Write("o", o, file);
+  bfs::MatWrite("o", o, file);
 ```

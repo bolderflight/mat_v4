@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 # Project information
 project(Mat_v4
-	VERSION 1.0.3
+	VERSION 2.0.0
 	DESCRIPTION "MATLAB binary mat file v4 C++ interface"
 	LANGUAGES CXX
 )
