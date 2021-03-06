@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0.0
+- Updated namespace to *bfs*
+- Renamed *Write* to *MatWrite*
+
 ## v1.0.3
 - Updated CONTRIBUTING
 - Switched to github as source for eigen
