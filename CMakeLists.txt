@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.13)
 # Project information
 project(Mat_v4
-	VERSION 2.0.0
+	VERSION 2.0.1
 	DESCRIPTION "MATLAB binary mat file v4 C++ interface"
 	LANGUAGES CXX
 )
@@ -10,7 +10,7 @@ include(FetchContent)
 FetchContent_Declare(
 	eigen
 	GIT_REPOSITORY 	https://github.com/bolderflight/eigen.git
-	GIT_TAG v1.0.0
+	GIT_TAG v2.0.0
 )
 FetchContent_MakeAvailable(eigen)
 
