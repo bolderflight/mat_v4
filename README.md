@@ -1,5 +1,7 @@
+![Bolder Flight Systems Logo](img/logo-words_75.png)
+
 # mat_v4
-This library provides a C++ interface to write data in MATLAB mat v4 binary format to a file.
+This library provides a C++ interface to write data in MATLAB mat v4 binary format to a file. It is compatible with CMake and would be easy to add to other projects, consisting of a single header-only file.
    * [License](LICENSE.md)
    * [Changelog](CHANGELOG.md)
    * [Contributing guide](CONTRIBUTING.md)
